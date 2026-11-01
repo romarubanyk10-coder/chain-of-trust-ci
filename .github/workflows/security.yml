@@ -18,7 +18,10 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
+      - name: Check dependency allowlist
+      run: python scripts/check_dependencies.py
+
+    - name: Install dependencies
         run: python -m pip install -r requirements.txt
 
       - name: Run application
